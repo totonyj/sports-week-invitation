@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026년 하반기 스포츠 주간행사 초대장</title>
+  <meta name="description" content="2026. 11. 2.(월) 19:00 기흥역 AK몰 애슐리 · 정책기획과 전직원 초대">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="2026년 하반기 스포츠 주간행사 초대장">
+  <meta property="og:description" content="2026. 11. 2.(월) 19:00 기흥역 AK몰 애슐리">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <p class="hero-label">INVITATION</p>
+      <h1 class="hero-title" data-title></h1>
+      <p class="hero-tagline" data-tagline></p>
+      <p class="dday" data-dday aria-live="polite">D-</p>
+    </header>
+
+    <section class="card" aria-labelledby="countdown-title">
+      <h2 id="countdown-title" class="card-title">행사까지 남은 시간</h2>
+      <div class="countdown" data-countdown role="timer">
+        <div class="cd-unit"><span class="cd-num" data-cd="days">0</span><span class="cd-label">일</span></div>
+        <div class="cd-unit"><span class="cd-num" data-cd="hours">00</span><span class="cd-label">시간</span></div>
+        <div class="cd-unit"><span class="cd-num" data-cd="minutes">00</span><span class="cd-label">분</span></div>
+        <div class="cd-unit"><span class="cd-num" data-cd="seconds">00</span><span class="cd-label">초</span></div>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="info-title">
+      <h2 id="info-title" class="card-title">행사 안내</h2>
+      <dl class="info">
+        <div class="info-row"><dt>일시</dt><dd><span data-date></span> <span data-time></span></dd></div>
+        <div class="info-row"><dt>장소</dt><dd data-place-name></dd></div>
+        <div class="info-row"><dt>대상</dt><dd data-target></dd></div>
+      </dl>
+    </section>
+
+    <section class="card" aria-labelledby="place-title">
+      <h2 id="place-title" class="card-title">오시는 길</h2>
+      <p class="place-name" data-place-name></p>
+      <p class="place-address" data-address></p>
+      <button type="button" class="btn btn-ghost" data-copy>주소 복사</button>
+
+      <div class="map-wrap">
+        <iframe class="map" data-map title="행사 장소 지도" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <p class="map-fallback" data-map-fallback hidden>
+          지도를 불러오지 못했습니다. 아래 주소와 길찾기 링크를 이용해 주세요.
+        </p>
+      </div>
+      <p class="map-credit">
+        지도 © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors
+      </p>
+
+      <div class="btn-row">
+        <a class="btn" data-link="osm" target="_blank" rel="noopener">큰 지도</a>
+        <a class="btn" data-link="naver" target="_blank" rel="noopener">네이버지도</a>
+        <a class="btn" data-link="kakao" target="_blank" rel="noopener">카카오맵</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>많은 참석 부탁드립니다.</p>
+    </footer>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/dday.js"></script>
+  <script src="js/map.js"></script>
+</body>
+</html>
