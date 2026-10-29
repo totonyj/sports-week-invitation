@@ -13,6 +13,7 @@
 index.html        # 마크업 (시맨틱 태그)
 css/style.css     # 스타일 (CSS 변수, 모바일 우선)
 js/config.js      # 행사 정보 (날짜, 장소, 좌표, 문구) — 내용 수정은 여기서만
+js/theme.js       # 라이트/다크 테마 토글 (<head>에서 로드, 깜빡임 방지)
 js/dday.js        # D-day 계산·표시
 js/map.js         # 지도 표시
 images/           # 이미지 (WebP/JPEG, 압축된 것)
@@ -50,6 +51,11 @@ images/           # 이미지 (WebP/JPEG, 압축된 것)
 - JS: IIFE 패턴 일반 스크립트 (`file://`로 열어도 동작해야 하므로 `type="module"` 사용 금지), 전역은 `window.INVITATION`만, DOM 접근은 `data-*` 속성 사용
 - 주석과 문구는 한국어, 식별자는 영어
 - 접근성: 대비 4.5:1 이상, `prefers-reduced-motion` 존중, 버튼·링크에 명확한 레이블
+
+## 테마 (라이트/다크)
+- `<html data-theme="light|dark">`로 전환하고, 색상은 `:root` / `:root[data-theme="light"]`의 CSS 변수만 바꾼다 (컴포넌트에 색상 하드코딩 금지)
+- 첫 방문은 기기 설정(`prefers-color-scheme`)을 따르고 기본값은 라이트, 선택은 `localStorage`(`invitation-theme`)에 저장 (접근 실패 시 try/catch로 무시)
+- 두 테마 모두 본문 대비 4.5:1 이상 유지, 토글 버튼은 `aria-label`로 전환 대상을 안내
 
 ## 성능
 - 이미지 합계 1MB 이하 권장, 웹폰트는 1~2종 + `font-display: swap` (또는 시스템 폰트)
